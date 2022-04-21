@@ -15,28 +15,28 @@ struct Question {
             title: "Что вы любите?",
             type: .single,
             answers: [
-                Answer(title: "Плавать", animal: .dog),
-                Answer(title: "Плавать", animal: .dog),
-                Answer(title: "Плавать", animal: .dog),
-                Answer(title: "Плавать", animal: .dog)
+                Answer(title: "Стейк", animal: .dog),
+                Answer(title: "Рыбу", animal: .cat),
+                Answer(title: "Морковь", animal: .rabbit),
+                Answer(title: "Сыр", animal: .turtle)
             ]),
          Question(
              title: "Что вы любите?",
-             type: .single,
+             type: .multiple,
              answers: [
                  Answer(title: "Плавать", animal: .dog),
-                 Answer(title: "Плавать", animal: .dog),
-                 Answer(title: "Плавать", animal: .dog),
-                 Answer(title: "Плавать", animal: .dog)
+                 Answer(title: "Плавать", animal: .cat),
+                 Answer(title: "Плавать", animal: .rabbit),
+                 Answer(title: "Плавать", animal: .turtle)
              ]),
          Question(
              title: "Что вы любите?",
-             type: .single,
+             type: .ranged,
              answers: [
-                 Answer(title: "Плавать", animal: .dog),
-                 Answer(title: "Плавать", animal: .dog),
-                 Answer(title: "Плавать", animal: .dog),
-                 Answer(title: "Плавать", animal: .dog)
+                 Answer(title: "Ненавижу", animal: .cat),
+                 Answer(title: "Не оч люблю", animal: .rabbit),
+                 Answer(title: "Средне", animal: .turtle),
+                 Answer(title: "Обожаю", animal: .dog)
              ]),
         ]
     }
@@ -49,8 +49,8 @@ struct Answer {
 
 enum ResponseType {
     case single
-    case multiply
-    case slider
+    case multiple
+    case ranged
 }
 
 enum Animal: Character {
@@ -62,13 +62,13 @@ enum Animal: Character {
     var definition: String {
         switch self {
         case .dog:
-            return ""
+            return "Собака"
         case .cat:
-            return ""
+            return "Кошка"
         case .rabbit:
-            return ""
+            return "Заяц"
         case .turtle:
-            return ""
+            return "Черепаха"
         }
     }
 }
